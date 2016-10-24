@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function random_range(start_num, end_num){
+           if (end_num) {
+               var array = [];
+               for (i = start_num; i <= end_num; i++) {
+                   array.push(i);
+               }
+               start_num = array;
+           }
+            var random_index = Math.floor(Math.random()*(start_num.length));
+//            console.log(random_index);
+            var random_value = start_num[random_index];
+            console.log(random_value);
+            return(random_value);
+
+           }
+        random_range([1,32,32,45,36,62,22,2]);
+        random_range(2,10);
+
+
+    </script>
+</head>
+<body>
+<!--Build a function, random_range, that takes 2 parameters, start_num and end_num.
+ OPTIONALLY: If start_num is an array instead (and end_num isn't specified),
+ then it returns a random element from the array
+
+Example:
+random_range(2,15)
+returns 7
+random_range(1,100)
+returns 85
+random_range(['a','b','c','d','e'])
+returns 'b'-->
+
+</body>
+</html>
