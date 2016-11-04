@@ -1,0 +1,57 @@
+<!--## One to Multi-->
+
+<!--Build a function that sorts an array into a multidimensional array grouped by data type-->
+
+<!-- - Write a function that takes one parameter-->
+<!-- - Parameter 1 - An array of anything-->
+<!-- - The function should output a multidimensional array grouped by data type-->
+<!-- - Example:-->
+<!-- - `var myArray = ['hello', 34, true, false, 'goodbye', 56, 12, '25', true];`-->
+<!-- - `groupArray(myArray);`-->
+<!-- - Output - `[['hello, 'goodbye', '25'], [34, 56, 12], [true, false, true]]`-->
+<!--**IF YOU DON'T KNOW HOW MANY DATA TYPES YOU'LL HAVE-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function oneToMulti(array){
+            var object= {};
+            var resultArray =[[],[],[]];
+            for(i=0; i<array.length; i++) {
+                //if the object is the below as one of its keys, push to output
+                var type = typeof array[i];
+                switch (type) {
+                    case 'string':
+                        resultArray[0].push(array[i]);
+                        break;
+                    case 'number':
+                        resultArray[1].push(array[i]);
+                        break;
+                    case 'boolean':
+                        resultArray[2].push(array[i]);
+                        break;
+                    default:
+                        console.warn('unknown type');
+                        break;
+                }
+            }
+//        ---------------------------------------------------------------------
+
+
+            //if not, make the key value pair and push to output
+
+            //return output
+
+
+            oneToMulti(['hello', 34, true, false, 'goodbye', 56, 12, '25', true]);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
