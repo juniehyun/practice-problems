@@ -1,0 +1,71 @@
+<!--Build a function that takes in an array of strings and outputs a new array with the same strings in alphabetical order.-->
+
+<!-- - Write a function that takes one parameter-->
+<!-- - Parameter 1 - An Array of strings-->
+<!-- - The function should output an array containing all the strings from the input array but in alphabetical order-->
+<!-- - Example:-->
+<!-- -`var myArray = ['mouse', 'cat', 'dog', 'human'];`WHERE ALL THE FIRST LETTERS OF EACH STRING IS DIFFERENT-->
+<!-- - `sort(myArray);`-->
+<!-- - Output - `['cat', 'dog', 'human', 'mouse']`-->
+<!-- - Try doing this using a **Bubble Sort**, if you are unsure what that is <a href="https://www.google.com" target="_blank">Click Here</a>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+//        function alphabetize(array) {
+//            for (i = 0; i < array.length; i++) {
+//                console.log('in the for loop');
+//                var index0 = array[i];
+//                var index1 = array[i + 1];
+//                if (index0[i] > index1[i]) {
+//                    var temp = index0;
+//                    array[i] = array[i+1];
+//                    array[i+1] = temp;
+//                }
+//                else {
+//                    console.log(array);
+//                }
+//            }
+//        };
+//
+//    alphabetize(['mouse', 'cat', 'dog', 'human', 'apple', 'peony']);
+
+            //loop (increasing i++ and j++
+                //get first letter of first word in array
+                //get first letter of second word in array
+                //check which of letters comes first
+                    //if first comes first, then leave
+                    //if second word comes first, then switch
+
+
+
+var haystack = [5,2,9,8];
+function bubble_sort(array){
+    var somethingGotSwapped = 0;
+    do{
+        somethingGotSwapped = 0;
+        for(var i=1; i<array.length; i++){
+            if(array[i-1]>array[i]){
+                var temp = array[i-1];
+                array[i-1] = array[i];
+                array[i] = temp;
+                somethingGotSwapped = 1;
+            }
+        }
+    } while(somethingGotSwapped==true);
+    return array;
+}
+
+console.log(bubble_sort(haystack));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -17,36 +17,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        function oneToMulti(array){
-            var object= {};
-            var resultArray =[[],[],[]];
-            for(i=0; i<array.length; i++) {
-                //if the object is the below as one of its keys, push to output
-                var type = typeof array[i];
-                switch (type) {
-                    case 'string':
-                        resultArray[0].push(array[i]);
-                        break;
-                    case 'number':
-                        resultArray[1].push(array[i]);
-                        break;
-                    case 'boolean':
-                        resultArray[2].push(array[i]);
-                        break;
-                    default:
-                        console.warn('unknown type');
-                        break;
+
+    function oneToMulti(array){
+        var finalArray=[];
+
+    }
+    function oneToMulti(array){
+        var finalArray= [];  // index values = j ; for FINAL ARRAY
+        for (i=0; i<array.length;i++){ //index values = i ; for ARRAY
+            var word = array[i];
+            console.log('array i is' + word);
+            var matchFound = false;
+            for(j=0; j<finalArray.length; j++) {
+                var innerArray = finalArray[j];
+                if (typeof(word) == typeof(innerArray[0])) {
+                    console.log(innerArray[0]);
+                    matchFound = true;
+                    innerArray.push(word);
+                    break;
                 }
             }
-//        ---------------------------------------------------------------------
+            if(!matchFound){
+                var newInternal = [word];
+                console.log(newInternal);
+                finalArray.push(newInternal);
+            }
+        }
+        console.log(finalArray);
+    }
 
+    oneToMulti(['hello', 34, true, false, 'goodbye', 56, 12, '25', true]);
 
-            //if not, make the key value pair and push to output
-
-            //return output
-
-
-            oneToMulti(['hello', 34, true, false, 'goodbye', 56, 12, '25', true]);
 
     </script>
 </head>
