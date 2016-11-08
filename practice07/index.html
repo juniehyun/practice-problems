@@ -1,0 +1,85 @@
+<!--Build a function that will translate text into "Pig Latin" Take the first consonant and move it to the end of a word and then affix "ay" to the end of that word."
+
+Write a function that takes one parameter
+Parameter 1 - A string
+The function should output your input string translated into Pig Latin
+Example:
+var myString = "Hello my name is Stu"
+`translate(myString);
+Output - "ellohay ymay ameya siay tusay"
+Making it better!
+
+There are several more rules to Pig Latin, try incorporating as many as you can into your function.
+There are different rules for words that start with vowel sounds or silent letters for example.
+Here is a link to an explanation of all the rules.
+Also try maintaining capitalization of words that are capitalized in your input string.
+Example:
+"Hello there" would be "Ellohay heretay"-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function piglatin(x) {
+            var start = 0;
+            var stringArray = [];
+            //iterate through each letter in string and check if it's a space or a letter and put into an array to process array
+            for (i = 0; i <= x.length; i++) {
+                var singleWord = x.substring(start, i);
+                if (x.charCodeAt(i) < 65 || x.charCodeAt(i) > 122) { //IF ITS A SPACE
+                    // console.log('false not a letter');
+                    // console.log('i is ' + i);
+                    stringArray.push(singleWord);
+                    console.log(singleWord);
+
+                    start = i + 1;
+                }
+                else {
+                    //console.log('true'); //IF ITS A LETTER
+                    if (i === x.length) {
+                        stringArray.push(singleWord);
+                        console.log(singleWord);
+                        break;
+                    }
+                }
+            }
+            console.log(stringArray);
+            //for each word in the new array created above, check if it starts with a vowel or consonant
+            var finalString = "";
+            for (i = 0; i < stringArray.length; i++) {
+                var wordInStringArray = stringArray[i];
+                if (wordInStringArray[0].match(/[aeiouAEIOU]/)) {
+                    console.log('starts w vowel');
+                    finalString = finalString + wordInStringArray + 'way ';
+                    console.log(wordInStringArray + 'way');
+                }
+                else {
+                    wordInStringArray.substring(0, 1);
+                    var firstLetter = wordInStringArray.substring(1, 0);
+                    var remainingWord = wordInStringArray.substring(1);
+                    finalString = finalString + remainingWord + firstLetter + 'ay ';
+                    console.log(remainingWord + firstLetter + 'ay');
+                }
+            }
+            console.log(finalString);
+        };
+        piglatin('hello how are you');
+
+        //create function that takes 1 string parameter
+            //push string into an array
+                //for loop that iterates through each index
+                    //if consanant then
+                        //take off first letter and attach to end and add 'ay'
+                    //else
+                        //add 'way' at the end of it
+
+        //TODO do this again and practice
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

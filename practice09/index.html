@@ -1,0 +1,56 @@
+<!--Build a function that takes in a string and an array of strings. The function should output an array of strings that contain the same letters as the single input string.
+
+Write a function that takes two parameters
+Parameter 1 - A string
+Parameter 2 - An array of strings
+The function should output all the words from the input array (parameter 2) that are longer than the input string (parameter 1)
+Example:
+var myArray = ['cat','caterpillar','whale','accurate','smile','cactus','cute'];
+fittingWords('cat', myArray);
+Output - ['cat','caterpillar','accurate','cactus']-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fittingWords(string, array){
+            finalArray = [];
+        //check if each letter of string is found in each index of array
+            //iterate through array
+            for(i=0;i<array.length;i++){
+                var currentWord = array[i];
+                //iterate through each word
+                var counter = null;
+                for(j=0; j<currentWord.length; j++){
+                    var currentLetter = currentWord[j];
+                    var found = false;
+                    //iterate through each word in string
+                    for (k=0; k<string.length;k++){
+                        console.log('currently k is ' + string[k]);
+                        if(string[k]===currentLetter){
+                            found = true;
+                            counter++;//if counter is =3, then push word into new array
+                            console.log(currentWord[j] + ' in ' +currentWord+' is equal to '+ currentLetter);
+                            if(counter === 3){
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        //TODO get help
+
+        fittingWords('cat',['cat','caterpillar','whale','accurate','smile','cactus','cute']);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
