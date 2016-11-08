@@ -19,24 +19,26 @@ Output - { odd: [5, 1, 13, 3], even: [2, 6, 8, 20] }-->
     <title>Title</title>
     <script>
         function oddEven (array){
-            var finalObject = {odd:[], even:[]};
+            var finalObject = {
+                odd:[],
+                even:[]
+            };
             //if number is odd then push into first array
             for (i=0;i<array.length;i++){
                 if(isNaN(array[i])=== false){
                     if(array[i]%2>0){ //if number is odd
                         finalObject.odd.push(array[i]);
-                        break;
-//                    }
-//                    else{ //if number is even
-//                        finalObject.even.push(array[i]);
-
+                    }
+                    else{ //if number is even
+                        finalObject.even.push(array[i]);
                     }
                 }
             }
             //if number is even then push into second array
-        }
+            console.log(finalObject);
+        };
+
         oddEven([2,5,1,6,8,2,20,'cat',13,3]);
-        console.log(finalObject);
     </script>
 </head>
 <body>
