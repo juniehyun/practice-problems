@@ -17,31 +17,37 @@ Output - ['cat','caterpillar','accurate','cactus']-->
     <script>
         function fittingWords(string, array){
             finalArray = [];
-        //check if each letter of string is found in each index of array
             //iterate through array
             for(i=0;i<array.length;i++){
+                var stringArray = string.split("");
                 var currentWord = array[i];
-                //iterate through each word
                 var counter = null;
+                //iterate through each letter in each word
                 for(j=0; j<currentWord.length; j++){
                     var currentLetter = currentWord[j];
                     var found = false;
-                    //iterate through each word in string
-                    for (k=0; k<string.length;k++){
-                        console.log('currently k is ' + string[k]);
-                        if(string[k]===currentLetter){
+                    //iterate through array with string param and compare if it is found in current word
+                    for (k=0; k<stringArray.length && !found; k){
+                        var letterInString = stringArray[k];
+                        console.log('currently k is ' + stringArray[k]);
+                        if(letterInString===currentLetter){
                             found = true;
-                            counter++;//if counter is =3, then push word into new array
-                            console.log(currentWord[j] + ' in ' +currentWord+' is equal to '+ currentLetter);
-                            if(counter === 3){
-                                break;
+                            stringArray.splice(k,1);
+                            if(stringArray.length ==0){
+                                finalArray.push(currentWord);
+                                console.log(finalArray);
                             }
+                            console.log(currentWord[j] + ' in ' +currentWord+' is equal to '+ currentLetter);
+                        }
+                        else{
+                            k++;
                         }
                     }
                 }
             }
+            return finalArray;
         };
-        //TODO get help
+        //TODO do again
 
         fittingWords('cat',['cat','caterpillar','whale','accurate','smile','cactus','cute']);
     </script>
