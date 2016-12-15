@@ -1,6 +1,8 @@
-<!--### sort by field-->
 
-<!--Create a function, sort_object_list_by_field(), that does the following:-->
+<!--### sort by field-->
+<!--*****completed 12/15/2016-->
+<!--Create a function, sort_o
+bject_list_by_field(), that does the following:-->
 <!-- - Takes a list of objects, and returns an array of those objects, sorted by an arbitrary property-->
 
 <!--#### Input:-->
@@ -37,25 +39,25 @@
 </head>
 <body>
 <script>
+
 function sort_by_field (array, field){
     for(i=0;i<array.length;i++){
         for(j=i+1;j<array.length;j++){
-            if(array[i].field>array[j].field){
+            if(array[i][field]>array[j][field]){
                 var temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
             }
         }
     }
+    console.log(array);
 }
-
 
 sort_by_field([
         {name: 'John', age:42, gender:'M'},
         {name: 'Jack', age:34, gender:'M'},
         {name: 'Michael',age:40, gender: 'M'},
-        {name: 'Kendra',age:48, gender:'F'}
-    ], age)
+        {name: 'Kendra',age:48, gender:'F'}], 'gender');
 
 
 </script>
