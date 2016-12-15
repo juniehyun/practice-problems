@@ -1,0 +1,39 @@
+<!--complete 11/29/2016-->
+
+<!--math computation sequences
+Given the following function call:
+
+math_sequences(2,5);
+And the resulting output:
+
+["2+5=7", "2-5=-3", "2*5=10", "2/5=0.4"];
+Create a function definition that achieves the output with the given input.
+
+Solution Set !-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function math_sequences(number1,number2){
+            var array = [];
+            var addSolution = number1+number2;
+            var add = number1+"+"+number2+"="+addSolution;
+            array.push(add);
+            var multiplySolution = number1*number2;
+            var multiply = number1+"*"+number2+"="+multiplySolution;
+            array.push(multiply);
+            var divideSolution = number1/number2;
+            var divide = number1+"/"+number2+"="+divideSolution;
+            array.push(divide);
+            console.log(array);
+        }
+        math_sequences(2,5);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
